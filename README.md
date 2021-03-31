@@ -6,6 +6,7 @@ This program uses The San Francisco Data API that can be found [here](https://de
 
 ## Instructions to build the binary SFFoodTruck
 On Linux:
+
 This is a CMake project. It depends on the [C++ Requests](https://github.com/whoshuu/cpr) library to send SOQL queries and get results from the SOCRATA API. [Here](https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html#lib-targets) are the directions to build a CMake project. The most convenient way is to use an IDE such as CLion to build the CMakeLists.txt. 
 - Git clone this repository
 - Install CLion
