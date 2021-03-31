@@ -11,7 +11,7 @@ This is a CMake project. It depends on the [C++ Requests](https://github.com/who
 - Install CLion
 - Open CLion and select File->Open, type the path of foodTruckFinder folder, and click OK.
 - You will see a cmake-build-debug folder getting created in the foodTruckFinder directory. 
-- Click the Build button in CLion[image](https://user-images.githubusercontent.com/81490599/113206102-0a653f80-923d-11eb-9027-5959ed943d56.png)
+- Click the Build button in CLion![image](https://user-images.githubusercontent.com/81490599/113206102-0a653f80-923d-11eb-9027-5959ed943d56.png)
 - You will see a binary file called SFFoodTruck is created in the cmake-build-debug folder along with all the build cpr(C++ Rquests library) objects.
 
 
