@@ -11,7 +11,7 @@ FoodTruckFinder::FoodTruckFinder(int pageLimit, const std::vector<std::string>& 
 {
     //Get current time in San Francisco, CA
     std::time_t t = std::time(nullptr);
-    putenv(const_cast<char *>("TZ=PST8PDT"));//set the correct time zone to
+    putenv(const_cast<char *>("TZ=PST8PDT"));//set the correct time zone
     curTime_ = std::localtime(&t);
 
     //Fill in selectedFields
@@ -35,7 +35,7 @@ std::string FoodTruckFinder::getTimeIn24HourFormat(){
     min = std::string(2 - min.length(), '0') + min;//add leading 0's to min
     formattedTime = apos + hour + ":" + min +apos;
 
-    //hardcode for testing
+    //For testing purpose
     //formattedTime = apos +"03:10"+apos;
     return formattedTime;//e.g. '14:42'
 }
@@ -56,7 +56,7 @@ std::string FoodTruckFinder::buildQuery(const int& page){
     //pagination offset
     query_ += "&$offset="+std::to_string(offset_);
     //order clause: ascending order of applicant
-    query_ += "&$order=applicant%20ASC";//Need to replace space with %20 to make it work in cpr::Get
+    query_ += "&$order=applicant%20ASC";//NOTE: Need to replace space with %20 to make it work in cpr::Get
     //where clause e.g. where='14:42' between start24 and end24 and dayorder=1
 
     query_ += "&$where="+time+"%20between%20start24%20and%20end24%20";
@@ -65,10 +65,13 @@ std::string FoodTruckFinder::buildQuery(const int& page){
     return query_;
 }
 
-
+FoodTruckFinderApp::FoodTruckFinderApp(int pageLimit, const std::vector<std::string>& additionalSelectedFields )
+{
+    ftf_ = std::make_unique<FoodTruckFinder>(pageLimit, additionalSelectedFields);
+}
 
 cpr::Response FoodTruckFinderApp::query_api(int page){//query which page
-    return cpr::Get(cpr::Url{ftf_.buildQuery(page)});
+    return cpr::Get(cpr::Url{ftf_->buildQuery(page)});
 }
 
 void FoodTruckFinderApp::printResults(const std::string& queryResults, int page){

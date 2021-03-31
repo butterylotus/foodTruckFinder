@@ -17,17 +17,17 @@ private:
     std::string getTimeIn24HourFormat();
     int getDayOfWeek();
 public:
-    FoodTruckFinder(int pageLimit = 10, const std::vector<std::string>& additionalSelectedFields = {});
+    FoodTruckFinder(int pageLimit = 10, const std::vector<std::string>& additionalSelectedFields ={});//pageLimit is the max number of items shown on one page
     std::string buildQuery(const int& page);
 };
 
 class FoodTruckFinderApp{
 public:
-    FoodTruckFinderApp(){};
+    FoodTruckFinderApp(int pageLimit = 10, const std::vector<std::string>& additionalSelectedFields = {});//pageLimit is the max number of items shown on one page
     void run();
 
 private:
-    FoodTruckFinder ftf_;
+    std::unique_ptr<FoodTruckFinder> ftf_;
 
     cpr::Response query_api(int page);
     void printResults(const std::string& queryResults, int page);
