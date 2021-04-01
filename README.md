@@ -18,7 +18,15 @@ This is a CMake project. It depends on the [C++ Requests](https://github.com/who
 
 ## Execute the program
 - Click the Run button in CLion![image](https://user-images.githubusercontent.com/81490599/113208219-88c2e100-923f-11eb-920d-3c2be9032833.png) to run the program.
-You can enter "prev" or "p" to page up, "next" or "n" to page down, and "exit" or "e" to exit the program.
+You can enter "prev" or "p" to page up, "next" or "n" to page down, "exit" or "e" to exit the program.
 ![image](https://user-images.githubusercontent.com/81490599/113224661-e8c68100-9259-11eb-86a0-6980004f4b03.png)
 ![image](https://user-images.githubusercontent.com/81490599/113224936-7f933d80-925a-11eb-80e2-cd6be112dbea.png)
 ![image](https://user-images.githubusercontent.com/81490599/113224857-54a8e980-925a-11eb-9d40-569fe6bf0440.png)
+
+- If you reached the end, you can only enter "prev" or "p" to page up, "exit" or "e" to exit the program.
+![image](https://user-images.githubusercontent.com/81490599/113229695-7bb8e880-9265-11eb-87be-fe7136ac618e.png)
+
+- If you check during non business hours, you will see a note:
+![image](https://user-images.githubusercontent.com/81490599/113229883-d5211780-9265-11eb-8b12-89a9adb8696f.png)
+
+
